@@ -1,24 +1,14 @@
-import React, {FC, useState} from 'react';
-import {css} from '@emotion/css';
+import React, {FC} from 'react';
+import styled from '@emotion/styled';
+import './index.css';
 
-const styles = {
-  root: css`
-    border: 1px solid red
-  `,
-  text: (color: string) => css`
-    color: ${color}
-  `
-}
-type Props = {};
+const Text = styled.div`
+  color: red
+`
 
-export const Hello: FC<Props> = ({}) => {
-  const [color, setColor] = useState<string>('')
+export const Hello: FC = ({}) => {
 
-  return <div className={styles.root}>
-    <div className={styles.text('red')}>Red</div>
-    <div className={styles.text('blue')}>Blue</div>
-    <div className={styles.text(color)}>
-      Input: <input type={'text'} value={color} onChange={event => setColor(event.target.value)}/>
-    </div>
+  return <div>
+    <Text>Hello</Text>
   </div>;
 }
