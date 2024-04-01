@@ -5,15 +5,14 @@ const RedText = styled.div`
   color: red
 `
 
-const DynamicText = styled.div`
-font-size: ${(props) => (props.title?.length ?? 1) * 10}px
+const DynamicText = styled.div<{ baseSize: number }>`
+font-size: ${(props) => props.baseSize * 10}px
 `
 
 export const Hello: FC = ({ }) => {
   return <div>
     <RedText>Hello</RedText>
-    <DynamicText title="a">A</DynamicText>
-    <DynamicText title="aa">B</DynamicText>
-    <DynamicText title="aaa">C</DynamicText>
+    <DynamicText baseSize={10}>A</DynamicText>
+    <DynamicText baseSize={20}>B</DynamicText>
   </div>;
 }
